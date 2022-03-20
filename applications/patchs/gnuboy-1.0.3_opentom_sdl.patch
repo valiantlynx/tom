@@ -1,0 +1,30 @@
+diff -rupN gnuboy-1.0.3/sys/sdl/sdl.c gnuboy-1.0.3_opentom/sys/sdl/sdl.c
+--- gnuboy-1.0.3/sys/sdl/sdl.c	2008-09-09 13:53:00.000000000 +0200
++++ gnuboy-1.0.3_opentom/sys/sdl/sdl.c	2014-03-06 12:19:31.000000000 +0100
+@@ -81,7 +81,7 @@ static void joy_init()
+ 	if (SDL_InitSubSystem(SDL_INIT_JOYSTICK))
+ 		return;
+ 	
+-	joy_count = SDL_NumJoysticks();
++	joy_count = 0; /* SDL_NumJoysticks(); */
+ 	
+ 	if (!joy_count)
+ 		return;
+@@ -89,7 +89,7 @@ static void joy_init()
+ 	/* now try and open one. If, for some reason it fails, move on to the next one */
+ 	for (i = 0; i < joy_count; i++)
+ 	{
+-		sdl_joy = SDL_JoystickOpen(i);
++		sdl_joy = 0; /* SDL_JoystickOpen(i); */
+ 		if (sdl_joy)
+ 		{
+ 			sdl_joy_num = i;
+@@ -98,7 +98,7 @@ static void joy_init()
+ 	}
+ 	
+ 	/* make sure that Joystick event polling is a go */
+-	SDL_JoystickEventState(SDL_ENABLE);
++	/* SDL_JoystickEventState(SDL_ENABLE); */
+ }
+ 
+ static void overlay_init()
