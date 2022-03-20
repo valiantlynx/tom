@@ -4,7 +4,10 @@
 *This repository was tested to be working on **June 2020**.*
 
 ## Getting started
+you should install the Remote - Containers vscode extention to run the container.
+the container is a ubuntu focal linux os. thats where you run the commands.
 
+I PUT THE FILE IN A DOCKER CONTAINER. ITS NOW A VSCODE DOCKER ENVIRONMENT. THUS U CAN SKIP STEP 1 AND 2. START AT set the ROOT...
 Before proceeding, it is recommended to backup the original contents of your GPS's internal storage.
 
 - Register the i386 architecture by executing `sudo dpkg --add-architecture i386` (or the equivalent for your system)
